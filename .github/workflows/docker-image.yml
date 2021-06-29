@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --tag python-mooping:$(date +%s)
     - name: Push to github
-      run: git config --global user.name "Rukchad Wongprayoon" && git config --global user.email "contact@biomooping.tk" && git add . && git pull && git add . && git commit -m "Docker Image Build Successfully" && git push
+      run: git config --global user.name "Rukchad Wongprayoon" && git config --global user.email "contact@biomooping.tk" && git add . && git commit -m "Docker Image Build Successfully" && git push -u origin master
