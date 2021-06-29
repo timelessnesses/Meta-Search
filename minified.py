@@ -14,4 +14,4 @@ async def main():
         return {"Result":[None]}
     else:
         result = search(query,num_results=1000);await write(query);return {"Result":True,"Query":result}
-import threading;threading.Thread(target=run).start()
+run()
