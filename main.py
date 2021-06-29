@@ -19,4 +19,4 @@ async def main(): # Asyncronous function cuz why not?
         result = search(query,num_results=1000) # Search time with limit result to 1000
         await write(query) # write query log
         return {"Result":True,"Query":result} # return result
-import threading;threading.Thread(target=run).start() # start server
+run()
