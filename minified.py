@@ -9,9 +9,9 @@ async def main():
     try:
         query = flask.request.headers.get("search")
         if query == None:
-            return {"Result":[None]}
+            return {"Result":[None]},400
     except KeyError:
-        return {"Result":[None]}
+        return {"Result":[None]},400
     else:
-        result = search(query,num_results=10000000000);await write(query);return {"Result":True,"Query":result} # Modify num_results to be what the heck ever you want
+        result = search(query,num_results=10000000000);await write(query);return {"Result":True,"Query":result},202 # Modify num_results to be what the heck ever you want
 run()
