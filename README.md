@@ -2,6 +2,8 @@
 
 Welcome to Meta Search. Work like mat1 but you need to use requests ( Actually no building webapplication I am fucking lazy)
 
+Result up to 10000000 results! (Modify it in main.py or minified.py)
+
 ## How to use?
 
 Run
