@@ -16,7 +16,7 @@ async def main(): # Asyncronous function cuz why not?
     except KeyError: # If there's key error
         return {"Result":[None]} # return None
     else: # nothing error so far
-        result = search(query,num_results=1000) # Search time with limit result to 1000
+        result = search(query,num_results=100000000000000) # Search time with limit result to 100000000000000 (modifiable)
         await write(query) # write query log
         return {"Result":True,"Query":result} # return result
 run()
