@@ -14,7 +14,7 @@ async def main(): # Asyncronous function cuz why not?
         if query == None: # If it is none
             return {"Result":[None]},400 # return none
     except KeyError: # If there's key error
-        return {"Result":[None]} # return None
+        return {"Result":[None]},400 # return None
     else: # nothing error so far
         result = search(query,num_results=100000000000000) # Search time with limit result to 100000000000000 (modifiable)
         await write(query) # write query log
