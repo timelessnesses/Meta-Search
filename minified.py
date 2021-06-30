@@ -13,5 +13,5 @@ async def main():
     except KeyError:
         return {"Result":[None]}
     else:
-        result = search(query,num_results=1000);await write(query);return {"Result":True,"Query":result}
+        result = search(query,num_results=10000000000);await write(query);return {"Result":True,"Query":result} # Modify num_results to be what the heck ever you want
 run()
