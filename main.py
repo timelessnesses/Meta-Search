@@ -12,11 +12,11 @@ async def main(): # Asyncronous function cuz why not?
     try: # Try to get searcg query
         query = flask.request.headers.get("search") # Get search query meta name
         if query == None: # If it is none
-            return {"Result":[None]} # return none
+            return {"Result":[None]},400 # return none
     except KeyError: # If there's key error
         return {"Result":[None]} # return None
     else: # nothing error so far
         result = search(query,num_results=100000000000000) # Search time with limit result to 100000000000000 (modifiable)
         await write(query) # write query log
-        return {"Result":True,"Query":result} # return result
+        return {"Result":True,"Query":result},202 # return result
 run()
