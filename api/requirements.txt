@@ -1,0 +1,4 @@
+flask
+googlesearch-python
+aiofiles
+flask[async]
