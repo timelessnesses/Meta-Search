@@ -6,7 +6,11 @@ class metaserver():
 		except KeyError:
 			port = 8000
 		finally:
-			ip = requests.get("https://api.ipify.org").content.decode();print(f"Hello there!\nYou launched meta search! \nIf you wonder where I can find my metasearch api end point just wait until your browser open \nand wait until you get lots of output! and that time is to refresh browser!\n Or if you want to access with public IP address you can go to https://{ip}:{port}");import webbrowser;webbrowser.open("http://localhost:{}".format(port));return self.run(int(port))
+			if "notshowipaddress" in kwargs:
+				ip = "localhost"
+			else:
+				ip = requests.get("https://api.ipify.org").content.decode()
+			print(f"Hello there!\nYou launched meta search! \nIf you wonder where I can find my metasearch api end point just wait until your browser open \nand wait until you get lots of output! and that time is to refresh browser!\n Or if you want to access with public IP address you can go to https://{ip}:{port}");import webbrowser;webbrowser.open("http://localhost:{}".format(port));return self.run(int(port))
 	app = flask.Flask("Meta Search")
 
 	def run(self,port=80):
@@ -26,3 +30,11 @@ class metaserver():
 		else:
 			result = search(query,num_results=10000);return {"Result":True,"Query":result,"Advertising":"Thank you for using metasearch! Please visit https://github.com/dumb-stuff/Meta-search for github repository and https://pypi.org/project/metasearch !"},202 # Modify num_results to be what the heck ever you want
 print("Default port is 8000 for work fine on every oses. You can modify at start of server by do \nmetaserver(port=your port can be string or integer)")
+def launch():
+	import sys
+	if "notshowipaddress" in sys.argv:
+		try:
+			metaserver(port=sys.argv[1],notshowipaddress=None)
+		except IndexError:
+			metaserver(notshowipaddress=None)
+		return

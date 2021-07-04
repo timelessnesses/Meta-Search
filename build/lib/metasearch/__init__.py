@@ -26,3 +26,9 @@ class metaserver():
 		else:
 			result = search(query,num_results=10000);return {"Result":True,"Query":result,"Advertising":"Thank you for using metasearch! Please visit https://github.com/dumb-stuff/Meta-search for github repository and https://pypi.org/project/metasearch !"},202 # Modify num_results to be what the heck ever you want
 print("Default port is 8000 for work fine on every oses. You can modify at start of server by do \nmetaserver(port=your port can be string or integer)")
+def launch():
+	import sys
+	try:
+		metaserver(sys.argv[1])
+	except IndexError:
+		metaserver()

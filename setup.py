@@ -4,9 +4,9 @@ classifiers = []
  
 setup(
   name='metasearch',
-  version='1',
+  version='5.1',
   description='Pre built metasearch repository for easy uses.',
-  long_description=open('pypi support one.md').read() + "\n####pog",
+  long_description=open('README.md').read() + "\n#### pog",
   long_description_content_type='text/markdown',
   url='https://github.com/dumb-stuff/Meta-search',  
   author='Rukchad Wongprayoon',
@@ -15,5 +15,8 @@ setup(
   classifiers=classifiers,
   keywords='Tools', 
   packages=find_packages(),
-  install_requires=["flask","requests","googlesearch-python","asgiref"]
+  install_requires=["flask","requests","googlesearch-python","asgiref"],
+  entry_points={
+    'console_scripts': ['metasearch=metasearch.__init__:launch']
+  }
 )
