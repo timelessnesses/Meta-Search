@@ -1,4 +1,6 @@
+MANIFEST.in
 README.md
+pypisupport.md
 setup.py
 metasearch/__init__.py
 metasearch.egg-info/PKG-INFO

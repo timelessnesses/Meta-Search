@@ -38,3 +38,9 @@ def launch():
 		except IndexError:
 			metaserver(notshowipaddress=None)
 		return
+	try:
+		metaserver(port=sys.argv[1])
+	except IndexError:
+		metaserver()
+	finally:
+		return

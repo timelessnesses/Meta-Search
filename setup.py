@@ -6,7 +6,7 @@ setup(
   name='metasearch',
   version='5.1',
   description='Pre built metasearch repository for easy uses.',
-  long_description=open('README.md').read() + "\n#### pog",
+  long_description=open('pypisupport.md').read() + "\n#### pog",
   long_description_content_type='text/markdown',
   url='https://github.com/dumb-stuff/Meta-search',  
   author='Rukchad Wongprayoon',
